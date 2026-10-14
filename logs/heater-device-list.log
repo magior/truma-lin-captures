@@ -1,0 +1,103 @@
+# Truma CP Plus C3.00.00 + Combi 6 Gas H5.00.00: device list sent to the iNet Box
+#
+# After registration the CP Plus sends the emulated iNet Box (NAD 03) its device list
+# (buffer 0C 0B, one device per BB message): device 0 is the CP Plus (sw 03.00.00), device 1
+# the heater (hw 0301.00, sw 05.00.00), i.e. heater device 0x05.
+# Columns and setup: see README.md. Times in seconds from the start of the capture.
+#
+    t (s)  id  data                     by   decoded
+   22.939  17  (no answer)
+   22.990  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   23.041  3c  03 05 b9 00 1f 00 00 ff
+               └ M>S NAD 03 Truma-heartbeat(B9): 00 1f 00 00
+   23.092  3d  03 02 f9 00 ff ff ff ff  box
+               └ S>M NAD 03 +Truma-heartbeat(B9): 00
+   23.143  3c  03 10 29 bb 00 1f 00 1e
+   23.193  3c  03 21 00 00 22 ff ff ff
+   23.244  3c  03 22 54 01 0c 0b 00 2c
+   23.295  3c  03 23 02 00 01 00 50 00
+   23.346  3c  03 24 00 03 00 00 06 0b
+   23.397  3c  03 25 00 00 00 00 00 00
+   23.448  3c  03 26 00 00 00 00 00 00
+               └ M>S NAD 03 Truma-status-download(BB) buffer 0c 0b: 00 2c 02 00 01 00 50 00 00 03 00 00 06 0b 00 00 00 00 00 00 00 00 00 00 00 00
+                 -> device 0 of 2: hw 0050.00 sw 03.00.00
+   23.498  3d  03 01 fb ff ff ff ff ff  box
+               └ S>M NAD 03 +Truma-status-download(BB)
+   23.549  3c  03 05 b9 00 1f 00 01 ff
+               └ M>S NAD 03 Truma-heartbeat(B9): 00 1f 00 01
+   23.600  3d  03 02 f9 00 ff ff ff ff  box
+               └ S>M NAD 03 +Truma-heartbeat(B9): 00
+   23.652  03  aa 0a ff ff ff ff ff ff       room_setpoint=OFF
+   23.703  04  aa 0a ff ff ff ff ff ff       water_setpoint=OFF
+   23.754  05  01 ff ff ff ff ff ff ff       energy=fuel energy_raw=1
+   23.804  06  00 00 ff ff ff ff ff ff       power_limit_w=0
+   23.855  07  00 00 ff ff ff ff ff ff       fan=off fan_raw=00 00
+   23.906  09  ff ff ff ff ff ff ff ff
+   23.957  16  00 05 51 0b 5d 0b ff 7f       fix_info=0 flags_raw=5 room_temp_c=16.7 water_temp_c=17.9 supply_v=None set=antifreeze_bit,window_bit
+   24.009  17  (no answer)
+   24.059  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   24.110  3c  ff ff ff ff ff ff ff ff
+   24.161  3d  (no answer)
+   24.213  03  aa 0a ff ff ff ff ff ff       room_setpoint=OFF
+   24.264  04  aa 0a ff ff ff ff ff ff       water_setpoint=OFF
+   24.315  05  01 ff ff ff ff ff ff ff       energy=fuel energy_raw=1
+   24.365  06  00 00 ff ff ff ff ff ff       power_limit_w=0
+   24.416  07  00 00 ff ff ff ff ff ff       fan=off fan_raw=00 00
+   24.467  09  ff ff ff ff ff ff ff ff
+   24.518  16  00 05 51 0b 5d 0b ff 7f       fix_info=0 flags_raw=5 room_temp_c=16.7 water_temp_c=17.9 supply_v=None set=antifreeze_bit,window_bit
+   24.570  17  (no answer)
+   24.621  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   24.671  3c  01 04 b8 01 03 00 ff ff
+               └ M>S NAD 01 Truma-B8?: 01 03 00
+   24.722  3d  01 03 f8 01 01 ff ff ff
+               └ S>M NAD 01 +Truma-B8?: 01 01
+   24.774  03  aa 0a ff ff ff ff ff ff       room_setpoint=OFF
+   24.825  04  aa 0a ff ff ff ff ff ff       water_setpoint=OFF
+   24.876  05  01 ff ff ff ff ff ff ff       energy=fuel energy_raw=1
+   24.927  06  00 00 ff ff ff ff ff ff       power_limit_w=0
+   24.978  07  00 00 ff ff ff ff ff ff       fan=off fan_raw=00 00
+   25.028  09  ff ff ff ff ff ff ff ff
+   25.079  16  00 05 51 0b 5d 0b ff 7f       fix_info=0 flags_raw=5 room_temp_c=16.7 water_temp_c=17.9 supply_v=None set=antifreeze_bit,window_bit
+   25.131  17  (no answer)
+   25.182  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   25.233  3c  01 06 b2 23 17 46 01 03
+               └ M>S NAD 01 ReadById: 23 17 46 01 03
+   25.284  3d  01 06 f2 01 00 00 00 ff
+               └ S>M NAD 01 +ReadById: 01 00 00 00 ff
+   25.336  03  aa 0a ff ff ff ff ff ff       room_setpoint=OFF
+   25.386  04  aa 0a ff ff ff ff ff ff       water_setpoint=OFF
+   25.437  05  01 ff ff ff ff ff ff ff       energy=fuel energy_raw=1
+   25.488  06  00 00 ff ff ff ff ff ff       power_limit_w=0
+   25.539  07  00 00 ff ff ff ff ff ff       fan=off fan_raw=00 00
+   25.590  09  ff ff ff ff ff ff ff ff
+   25.641  16  00 05 51 0b 5d 0b ff 7f       fix_info=0 flags_raw=5 room_temp_c=16.7 water_temp_c=17.9 supply_v=None set=antifreeze_bit,window_bit
+   25.692  17  (no answer)
+   25.743  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   25.794  3c  ff ff ff ff ff ff ff ff
+   25.845  3d  (no answer)
+   25.897  03  aa 0a ff ff ff ff ff ff       room_setpoint=OFF
+   25.948  04  aa 0a ff ff ff ff ff ff       water_setpoint=OFF
+   25.998  05  01 ff ff ff ff ff ff ff       energy=fuel energy_raw=1
+   26.049  06  00 00 ff ff ff ff ff ff       power_limit_w=0
+   26.100  07  00 00 ff ff ff ff ff ff       fan=off fan_raw=00 00
+   26.151  09  ff ff ff ff ff ff ff ff
+   26.202  16  00 05 51 0b 5d 0b ff 7f       fix_info=0 flags_raw=5 room_temp_c=16.7 water_temp_c=17.9 supply_v=None set=antifreeze_bit,window_bit
+   26.254  17  (no answer)
+   26.304  18  fe ff ff ff ff ff ff ff  box  box: nothing to send
+   26.355  3c  03 05 b9 00 1f 00 00 ff
+               └ M>S NAD 03 Truma-heartbeat(B9): 00 1f 00 00
+   26.406  3d  03 02 f9 00 ff ff ff ff  box
+               └ S>M NAD 03 +Truma-heartbeat(B9): 00
+   26.457  3c  03 10 29 bb 00 1f 00 1e
+   26.508  3c  03 21 00 00 22 ff ff ff
+   26.559  3c  03 22 54 01 0c 0b 00 86
+   26.609  3c  03 23 02 01 01 00 01 03
+   26.660  3c  03 24 00 05 00 00 00 00
+   26.711  3c  03 25 00 00 00 00 00 00
+   26.762  3c  03 26 00 00 00 00 00 00
+               └ M>S NAD 03 Truma-status-download(BB) buffer 0c 0b: 00 86 02 01 01 00 01 03 00 05 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+                 -> device 1 of 2: hw 0301.00 sw 05.00.00
+   26.813  3d  03 01 fb ff ff ff ff ff  box
+               └ S>M NAD 03 +Truma-status-download(BB)
+   26.864  3c  03 05 b9 00 1f 00 01 ff
+               └ M>S NAD 03 Truma-heartbeat(B9): 00 1f 00 01
